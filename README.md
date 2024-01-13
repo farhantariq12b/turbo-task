@@ -27,6 +27,9 @@ Before running the project, make sure you have the following software installed 
 
    You should see the version number of Node.js v18.
 
+5. Update the environment variables by copying from .env.example to .env
+
+
 ### Starting the APPLICATION
 
 1. Install project dependencies by navigating to the project directory in your terminal and running the following command:
