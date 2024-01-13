@@ -1,45 +1,24 @@
-import { Box, Drawer, Typography } from '@mui/material';
-import React from 'react';
-import UserProfile from '../UserProfile';
-import templateSVG from '../../assets/template.svg'
-
-const drawerWidth = 280;
+import { Box, Typography } from '@mui/material'
+import React from 'react'
 
 const Header: React.FC = () => {
   return (
-    <Drawer
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: drawerWidth,
-          boxSizing: 'border-box',
-        },
-      }}
-      variant="permanent"
-      anchor="left"
-    >
-      <div style={{
-        display: 'flex', justifyContent: 'space-between', flexDirection: 'column', height: '100%',
-      }}>
-        <Box>
-          <Box padding='32px 40px'>
-            <Typography variant='h2' color='#2B579A' fontStyle='italic' fontWeight='500'>
-              µDocx
-            </Typography>
-          </Box>
-          <Box padding='8px 48px' display='flex' alignItems='center'>
-            <img src={templateSVG} alt='template-svg' />
-            <Typography variant='body1' color='#2B579A' marginLeft='12px'>
-              Template
-            </Typography>
-          </Box>
-        </Box>
-        <UserProfile />
-      </div>
+    <Box display='flex' padding='24px 32px' justifyContent='space-between' borderBottom='1px solid #F1F3F5'>
+      <Box display='flex' alignItems='center'>
+        <Typography variant='h2' color='#2B579A' fontStyle='italic' fontWeight='500'>
+          µDocx
+        </Typography>
+        <Typography variant='body1' color='#212529' marginLeft='32px'>
+          Create Deliverable
+        </Typography>
+      </Box>
+      <Box padding='32px 0px' display='flex' alignItems='center'>
+        <Typography variant='body2' color='#212529'>
+          Need Help?
+        </Typography>
+      </Box>
+    </Box>
+  )
+}
 
-    </Drawer>
-  );
-};
-
-export default Header;
+export default Header

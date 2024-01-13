@@ -1,0 +1,23 @@
+.tableContainer {
+  background-color: #F8F9FA;
+}
+
+.tableRow {
+  &:last-child td, &:last-child th {
+    border: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-top: 1px solid #F1F3F5;
+    background: #F8F9FA;
+  }
+
+  .moreIcon {
+    display: none;
+  }
+
+  &:hover .moreIcon {
+    display: block;
+  }
+}
