@@ -17,9 +17,9 @@ const UserProfile: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const navigate = useNavigate();
 
-  const logoutUser = () => {
-    localStorage.setItem("user_id", "");
-    logout();
+  const logoutUser = async () => {
+    await logout();
+    localStorage.removeItem("access_token");
     navigate("/login");
   };
 

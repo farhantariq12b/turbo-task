@@ -18,9 +18,7 @@ const Sidebar: React.FC = () => {
       variant="permanent"
       anchor="left"
     >
-      <div style={{
-        display: 'flex', justifyContent: 'space-between', flexDirection: 'column', height: '100%',
-      }}>
+      <Box display='flex' justifyContent={'space-between'} flexDirection='column' height={'100%'}>
         <Box>
           <Box padding='32px 40px'>
             <Typography variant='h2' color='#2B579A' fontStyle='italic' fontWeight='500'>
@@ -35,7 +33,7 @@ const Sidebar: React.FC = () => {
           </Box>
         </Box>
         <UserProfile />
-      </div>
+      </Box>
 
     </Drawer>
   );

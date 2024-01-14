@@ -5,8 +5,11 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(
-  (config) => {
-    console.log('Request Interceptor:', config);
+  async (config) => {
+    const token = localStorage.getItem('access_token');
+    console.log('Request Interceptor:', token);
+
+    config.headers['Authorization'] = `Bearer ${token}`;
     return config;
   },
   (error: AxiosError) => {

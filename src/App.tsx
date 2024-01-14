@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './views/login'
 import PrivateRoute from './components/shared/PrivateRoute'
@@ -13,7 +13,14 @@ import Header from './components/shared/Header'
 import { SIDEBAR_WIDTH } from './constants'
 
 const App: React.FC = () => {
-  const { isLoading, error } = useAuth0();
+  const { isLoading, error, user, getAccessTokenSilently } = useAuth0();
+
+  useEffect(() => {
+    if (user) {
+      setTokenInStorage()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user])
 
   if (error) {
     return <div>Oops... {error.message}</div>;
@@ -21,6 +28,11 @@ const App: React.FC = () => {
 
   if (isLoading) {
     return <Loader />
+  }
+
+  const setTokenInStorage = async () => {
+    const token = await getAccessTokenSilently();
+    localStorage.setItem('access_token', token);
   }
 
   return (
