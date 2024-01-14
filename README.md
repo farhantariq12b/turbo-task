@@ -42,3 +42,9 @@ Before running the project, make sure you have the following software installed 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+3. To run the test cases run the following command
+
+  ```bash
+  npm test
+  ```

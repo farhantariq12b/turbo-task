@@ -17,6 +17,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+// I have provided the auth0 provider here but I prefered authentication from the backend.
+// So no client secrets are stored on frontend.
+
 root.render(
   <BrowserRouter>
     <Auth0Provider
