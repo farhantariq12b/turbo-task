@@ -48,3 +48,35 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
   ```bash
   npm test
   ```
+
+
+### Additional Fields
+
+I have added three additional fields in variables of deliverable
+1. required to check if the field is required or not
+2. minLength for minLength
+3. fieldValue for field value it is to keep the name and value separate Just like content management system where we type the name and a field value is assigned to it
+
+### TASK 2
+
+Here's a simplifed version of the details from the components I have deducted.
+
+#### Users
+- Associations: submits (to Submission)
+- Associations: belongs to many (Projects)
+
+#### Projects
+- Attributes: ProjectID, ProjectName
+
+#### Deliverables
+- Attributes: DeliverableID, DeliverableType, DeliverableName, DateCreated, CreatedByUserID, ProjectID
+- Associations: has (to DeliverableVariables), has (to Submission)
+
+#### DeliverableVariables
+- Attributes: VariableID, DeliverableID, Placeholder, VariableName, FieldValue, VariableType, Required, MinLength
+
+#### Submission
+- Attributes: SubmissionID, UserID, DeliverableID, SubmissionDate, SubmittedValues
+- Associations: submitted for (to Users), submitted for (to Deliverables)
+
+<img width="690" alt="image" src="https://github.com/farhantariq12b/turbo-task/assets/55201731/34ca3d0e-7d19-442e-9542-95d3d695003b">
