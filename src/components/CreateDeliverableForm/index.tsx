@@ -56,6 +56,7 @@ const CreateDeliverableForm: React.FC<CreateDeliverableFormProps> = ({
               fullWidth
               id={variable.Name}
               name={variable.fieldValue}
+              data-testid={variable.fieldValue}
               type={variable.type === "number" ? "number" : "text"}
               placeholder={variable.placeholder}
               value={

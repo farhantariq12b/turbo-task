@@ -18,12 +18,13 @@ const Deliverables: React.FC = () => {
   const fetchDeliverables = async () => {
     setLoading(true);
     try {
+
+      
       const response = await DeliverableService.getDeliverables();
       const { data: deliverableData } = response?.data || {};
 
       setDeliverables(deliverableData || []); 
     } catch (error) {
-      console.log(error);
       console.error('Error fetching deliverables:', error);
     }
     setLoading(false);

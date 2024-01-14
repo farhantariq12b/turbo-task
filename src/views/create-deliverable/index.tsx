@@ -24,11 +24,12 @@ const CreateDeliverable: React.FC = () => {
   const fetchDeliverableById = async () => {
     setLoading(true);
     try {
+      console.log(deliverableId, 'sdkjfhadsljkfhj')
       const response = await DeliverableService.getDeliverableById(
         Number(deliverableId)
       );
       const { data } = response.data;
-
+      
       const { initialValues: dynamicInitialValues, validationSchema: dynamicValidationSchema } = generateValidationSchemaAndInitialValues(data.variables);
 
       setInitialValues(dynamicInitialValues);
